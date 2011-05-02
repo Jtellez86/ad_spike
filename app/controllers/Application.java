@@ -7,31 +7,36 @@ import java.util.*;
 
 import models.*;
 
-import java.sql.Connection;
+import java.sql.*;
+
+import javax.persistence.*;
 
 public class Application extends Controller {
+
+	
 
     public static void index() {
         render();
     }
 
-/**	public static void list() {
-        List<Ad> ads = Ad.find("order by id").fetch();
-        render(ads);
+
+
+
+public static void list(String imageNameIn) {
+	//String id = params.get("imageNameIn"); 
+
+
+	/*Connection conn = DB.getConnection();
+	conn.createStatement().execute("insert into logs (adId) values ('this works!')");*/
+
+       
+
+	Ad ad = new Ad(imageNameIn);
+	ad.adId = imageNameIn;	
+	if(ad.adId != null)	
+	ad.save();
+	
+	List<Ad> ads = Ad.all().fetch();    
+	render(ads);
     }
-
-	public static void form(Long id) {
-        if(id == null) {
-            render();
-        }
-        Ad ad = Contact.findById(id);
-        render(ad);
-
-     --goes in index.html
-	#{list ads, as:'ads'}
-    <tr class="ad" adId="${ad.adId}">
-		<td id="name-${ad.adId}">${ad.adId}</td>
-	</tr>
-    #{/list}
-    }*/
 }

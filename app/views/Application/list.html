@@ -1,0 +1,14 @@
+<html>
+<title>Ad Added</title>
+<body>
+
+<table>
+#{list ads, as:'ad'}
+<tr class="ad" adId="${ad.id}">
+	<td id="adId-${ad.id}">${ad.adId}</td>
+</tr>
+#{/list}
+</table>
+
+</body>
+</html>
