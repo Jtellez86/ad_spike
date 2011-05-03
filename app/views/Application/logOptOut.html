@@ -1,0 +1,15 @@
+<html>
+<title>Ad Logged</title>
+<body>
+
+<table border = "1" cellspacing = "5" cellpadding = "5">
+#{list ads, as:'ad'}
+<tr class="ad" adId="${ad.id}">
+	<td id="adId-${ad.id}">Ad opted out: ${ad.adId}</td>
+	<td>At Time: ${ad.timeViewed}</td>
+</tr>
+#{/list}
+</table>
+
+</body>
+</html>

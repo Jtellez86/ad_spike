@@ -12,8 +12,8 @@ import java.sql.*;
 import javax.persistence.*;
 
 public class Application extends Controller {
-
 	
+	public static String imageName;
 
     public static void index() {
 
@@ -23,10 +23,18 @@ public class Application extends Controller {
 
 
 
-public static void list(String imageNameIn) {
-	new Ad(imageNameIn).save();
+	public static void logOptOut() {
+	
+	String adName = Application.imageName;
+	new Ad(adName).save();
+
 
 	List<Ad> ads = Ad.all().fetch();    
 	render(ads);
     }
+
+	public static void optOut(String imageNameIn){
+	Application.imageName = imageNameIn;
+	render();
+	}
 }
