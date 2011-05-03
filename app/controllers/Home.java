@@ -15,7 +15,5 @@ public class Home extends Controller {
         int randomIndex = generator.nextInt(3);
         String imageName = "image" + randomIndex;
         render(imageName);
-
     }
-
 }

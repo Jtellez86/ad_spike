@@ -16,6 +16,7 @@ public class Application extends Controller {
 	
 
     public static void index() {
+
         render();
     }
 
@@ -23,19 +24,8 @@ public class Application extends Controller {
 
 
 public static void list(String imageNameIn) {
-	//String id = params.get("imageNameIn"); 
+	new Ad(imageNameIn).save();
 
-
-	/*Connection conn = DB.getConnection();
-	conn.createStatement().execute("insert into logs (adId) values ('this works!')");*/
-
-       
-
-	Ad ad = new Ad(imageNameIn);
-	ad.adId = imageNameIn;	
-	if(ad.adId != null)	
-	ad.save();
-	
 	List<Ad> ads = Ad.all().fetch();    
 	render(ads);
     }

@@ -1,33 +1,16 @@
 package models;
-
-import play.*;
-import play.db.jpa.*;
-import play.data.validation.*;
-
-import javax.persistence.*;
+ 
 import java.util.*;
-
-
-
+import javax.persistence.*;
+ 
+import play.db.jpa.*;
+ 
 @Entity
-@Table(name = "logs")
 public class Ad extends Model {
+ 
+    public String adId;
     
-	@Required
-	public String adId;
-	
-	public Ad(String imageName){		
-		this.adId = imageName;
-	}
-
-
-	@Column(name = "adId")
-    	public String getadId(){
-		return adId;
-	}
-
-	
-	public void setAdId(String adID){
-		this.adId = adId;
-	}
+    public Ad(String adId) {
+        this.adId = adId;
+    }
 }
