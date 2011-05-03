@@ -15,13 +15,10 @@ public class Application extends Controller {
 	
 	public static String imageName;
 
-    public static void index() {
+    	public static void index() {
 
         render();
-    }
-
-
-
+    	}
 
 	public static void logOptOut() {
 	
@@ -29,12 +26,17 @@ public class Application extends Controller {
 	new OptedOutAd(adName).save();
 
 
-	List<Ad> ads = OptedOutAd.all().fetch();    
+	List<OptedOutAd> ads = OptedOutAd.all().fetch();    
 	render(ads);
-    }
+    	}
 
 	public static void optOut(String imageNameIn){
 	Application.imageName = imageNameIn;
 	render();
+	}
+
+	public static void displayAdsViewedLog(){
+	List<ViewedAd> viewedAds = ViewedAd.all().fetch();    
+	render(viewedAds);
 	}
 }

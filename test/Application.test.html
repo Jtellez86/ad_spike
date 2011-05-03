@@ -1,7 +1,16 @@
 *{ You can use plain selenium command using the selenium tag }*
 
-#{selenium}
+#{selenium 'Test Landing Page'}
     // Open the home page, and check that no error occured
     open('/')
     assertNotTitle('Application error')
 #{/selenium}
+
+#{selenium 'Test opt out page'}
+    // Open the opt out page, and check that no error occured
+    open('/optout?imageNameIn=image2')
+pause(10000000)
+
+    assertNotTitle('Application error')
+#{/selenium}
+

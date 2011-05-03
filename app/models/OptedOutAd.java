@@ -23,7 +23,10 @@ public class OptedOutAd extends Model {
 	//Timestamp time = new Timestamp(System.currentTimeMillis());
 	//this.timeOptedOut = time.toString());
         
-this.timeOptedOut = DateFormatUtils.format(System.currentTimeMillis(),"MM dd yy HH:mm");
+	this.timeOptedOut = DateFormatUtils.format(System.currentTimeMillis(),"MM 	dd yy HH:mm");
 	
     }
+	public String getAdId(){
+		return adId;
+	}
 }

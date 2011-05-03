@@ -5,9 +5,14 @@ import models.*;
 
 public class BasicTest extends UnitTest {
 
-    @Test
-    public void aVeryImportantThingToTest() {
-        assertEquals(2, 1 + 1);
+      @Test
+    public void testThatAdInfoIsLogged() {
+   
+	new OptedOutAd("ad1").save();
+
+	List<OptedOutAd> ads = OptedOutAd.all().fetch();
+	assertEquals(ads.get(ads.size() - 1).getAdId(), "ad1");
+	
     }
 
 }
