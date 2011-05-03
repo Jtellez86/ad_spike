@@ -26,10 +26,10 @@ public class Application extends Controller {
 	public static void logOptOut() {
 	
 	String adName = Application.imageName;
-	new Ad(adName).save();
+	new OptedOutAd(adName).save();
 
 
-	List<Ad> ads = Ad.all().fetch();    
+	List<Ad> ads = OptedOutAd.all().fetch();    
 	render(ads);
     }
 

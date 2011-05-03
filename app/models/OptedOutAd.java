@@ -10,12 +10,12 @@ import java.sql.*;
 import org.apache.commons.lang.time.DateFormatUtils;
  
 @Entity
-public class Ad extends Model {
+public class OptedOutAd extends Model {
  
     public String adId;
     public String timeOptedOut;
     
-    public Ad(String adId) {
+    public OptedOutAd(String adId) {
         this.adId = adId;
 
 

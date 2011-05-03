@@ -10,20 +10,20 @@ import java.sql.*;
 import org.apache.commons.lang.time.DateFormatUtils;
  
 @Entity
-public class Ad extends Model {
+public class ViewedAd extends Model {
  
     public String adId;
-    public String timeOptedOut;
+    public String timeViewed;
     
-    public Ad(String adId) {
+    public ViewedAd(String adId) {
         this.adId = adId;
 
 
 	//Another way to format the time
 	//Timestamp time = new Timestamp(System.currentTimeMillis());
-	//this.timeOptedOut = time.toString());
+	//this.timeViewed = time.toString());
         
-this.timeOptedOut = DateFormatUtils.format(System.currentTimeMillis(),"MM dd yy HH:mm");
+this.timeViewed = DateFormatUtils.format(System.currentTimeMillis(),"MM dd yy HH:mm");
 	
     }
 }
