@@ -2,16 +2,46 @@
 #{set title:'Home' /}
 
 
+<html>
+<head>
+<script type="text/javascript" language="javascript">
+
+    function createDiv()
+    {
+        var divTag = document.createElement("div");
+       
+        divTag.id = "AdInfoLinks";
+       
+        divTag.setAttribute("align","center");
+       
+        divTag.style.margin = "0px auto";
+       
+        divTag.className ="dynamicDiv";
+       
+        divTag.innerHTML = "<div id='newDivBody'>fdgdsa</body>"
+       
+        document.body.appendChild(divTag);
+    }
+
+    </script>
+</head>
+</html>
+
 <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+
 
 <div id="main-ad">
   <img id="ad-image" src="/public/images/${imageName}.jpg"/>
 
-<a id="list" href="@{Application.optOut(imageName)}">Ad Info</a>
+	<div id="adInfoTab">	
+	<a id="Ad Info" href="javascript:createDiv()" <IMG SRC="/public/images/Screenshot.png"> <value="create div" ></a>
+	</div>
+	<div>
+	<a id="list" href="@{Application.displayAdsViewedLog()}">Ad Viewed Info</>
+	</div>
+
 </div>
 
 
-<div>
 
-<a id="list" href="@{Application.displayAdsViewedLog()}">Ad Viewed Info</>
-</div>
+
