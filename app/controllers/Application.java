@@ -21,7 +21,7 @@ public class Application extends Controller {
     	}
 
 	public static void logOptOut(String imageNameIn) {
-	System.out.println(imageNameIn);
+
 	Application.imageName = imageNameIn;
 
 	new OptedOutAd(imageNameIn).save();
